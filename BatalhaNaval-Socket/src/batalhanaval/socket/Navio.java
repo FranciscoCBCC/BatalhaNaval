@@ -10,18 +10,30 @@ package batalhanaval.socket;
  * @author Francisco
  */
 public class Navio {
-    private int tamanho;
+    private int x;
+    private int y;
     
-    public Navio(int tamanho){
-        this.tamanho = tamanho;
+    public Navio(int x, int y){
+        this.x = x;
+        this.y = y;
                
     }
 
-    public int getTamanho() {
-        return tamanho;
+    public int getX() {
+        return x;
     }
 
-    public void setTamanho(int tamanho) {
-        this.tamanho = tamanho;
+    public void setX(int x) {
+        this.x = x;
     }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    
 }

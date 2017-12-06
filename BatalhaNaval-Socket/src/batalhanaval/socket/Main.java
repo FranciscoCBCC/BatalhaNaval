@@ -5,6 +5,7 @@
  */
 package batalhanaval.socket;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -16,17 +17,21 @@ public class Main {
     
 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner entrada = new Scanner(System.in);
-        Partida partida = new Partida();
+        Partida partida = null;
         do{
             System.out.println("1 - Iniciar partida");
+            System.out.println("2 - Sair do Jogo");
             int opcao;
             opcao = entrada.nextInt();
             switch(opcao){
                     case 1:
+                        partida = new Partida();
                         partida.iniciarPartida();
                         break;
+                    case 2:
+                        System.exit(0);
                     default:
                         System.out.println("Opcao inválida");
             }

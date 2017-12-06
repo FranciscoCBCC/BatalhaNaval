@@ -9,50 +9,45 @@ import java.util.Random;
  */
 
 public class Tabuleiro {
-    private int numLinhas;
-    private int numColunas;
+    private int numLinhas = 8;
+    private int numColunas = 8;
+    private char[][] tabuleiro;
     private int numNavios;
-    private Navio matriz[][];
 
-    public Tabuleiro(int numLinhas, int numColunas, int numNavios) {
-        this.numLinhas = numLinhas;
-        this.numColunas = numColunas;
+    public Tabuleiro(int numNavios) {
+        tabuleiro = new char[numLinhas][numColunas];
+        for(int i=0; i<numLinhas; i++){
+            for(int j=0; j<numColunas; j++){
+                tabuleiro[i][j] = 0;
+            }
+        }
         this.numNavios = numNavios;
         inserirNavios();
     }
-    
-    
-    
+
     private void inserirNavios(){
         Random aleatorio = new Random(); 
         Random aleatorio1 = new Random();
        
         for(int a = 0; a < numNavios; a++){ //Para cada navio
-            Navio navio = new Navio(1); //tamanho
+            //Navio navio = null; //coordenada
             int x  = aleatorio.nextInt(numLinhas);
             int y  = aleatorio1.nextInt(numColunas);
-            if(matriz[x][y]==null){ //verifica se a posição está vazia, se sim, insere um novo navio
-                matriz[x][y] = navio;
+            if(tabuleiro[x][y] == 0){ //verifica se a posição está vazia, se sim, insere um novo navio
+                tabuleiro[x][y] = 1;
+                System.out.println("Posição X:"+ x+ " Y:"+ y);
             }
         }
         
     }
+
     
-    public int getNumLinhas() {
-        return numLinhas;
+    
+    public char[][] getTabuleiro() {
+        return tabuleiro;
     }
-
-    public void setNumLinhas(int numLinhas) {
-        this.numLinhas = numLinhas;
-    }
-
-    public int getNumColunas() {
-        return numColunas;
-    }
-
-    public void setNumColunas(int numColunas) {
-        this.numColunas = numColunas;
-    }
+    
+    
     
      public int getNumNavios() {
         return numNavios;
