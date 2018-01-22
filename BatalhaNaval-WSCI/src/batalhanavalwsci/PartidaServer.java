@@ -19,5 +19,8 @@ import javax.jws.soap.SOAPBinding.Style;
 @SOAPBinding(style = Style.RPC)
 public interface PartidaServer {
     @WebMethod
-    public void conectarPartida(Jogador jogador);           
+    public void conectarPartida(Jogador jogador); 
+    
+    @WebMethod
+    public void jogar(Jogador jogador, int x, int y);
 }

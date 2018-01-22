@@ -14,21 +14,15 @@ package batalhanavalwsci;
 public class Jogador{
 
     private String nome;
-    private int pontuacao;
-    private int numNavios;
-    private Tabuleiro tabuleiro;
-    private char[][] tabuleiroOponente;
+    public int pontuacao;
+    public int numNavios;
+    
+
+    private char[][] tabuleiro;
     public boolean conectado = false;
     public Jogador oponente;
     public boolean minhaVez;
 
-    public int getNumNavios() {
-        return numNavios;
-    }
-
-    public void setNumNavios(int numNavios) {
-        this.numNavios = numNavios;
-    }
 
     public Jogador(){
         
@@ -38,31 +32,7 @@ public class Jogador{
         this.nome = nome;
         this.pontuacao = pontuacao;
         this.numNavios = numNavios;
-        tabuleiro = new Tabuleiro(numNavios);
         
-    }
-
-    public void atirar(Jogador jogadorOponente, int x, int y) {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        tabuleiroOponente = jogadorOponente.tabuleiro.getTabuleiro();
-        if (tabuleiroOponente[x][y] == 1) {
-            System.out.println("Você Acertou um navio!");
-            tabuleiroOponente[x][y] = 'N';
-
-            //System.out.println("Pontua antes "+ this.pontuacao);
-            //System.out.println("Navio antes "+ jogadorOponente.numNavios);
-            jogadorOponente.numNavios--;
-            System.out.println("Navios do Oponente: " + jogadorOponente.numNavios);
-
-            this.pontuacao++;
-            System.out.println("Sua Pontuação: " + this.pontuacao);
-        } else if (tabuleiroOponente[x][y] == 0) {
-            System.out.println("Tiro na água!");
-            tabuleiroOponente[x][y] = '~';
-        } else {
-            System.out.println("Esta posição já foi marcada ");
-        }
-        mostrarTabuleiro();
     }
 
     public void mostrarTabuleiro() {
@@ -71,7 +41,7 @@ public class Jogador{
         for (int i = 0; i < 8; i++) {
             System.out.print(i);
             for (int j = 0; j < 8; j++) {
-                System.out.print("    " + tabuleiroOponente[i][j]);
+                System.out.print("    " + tabuleiro[i][j]);
             }
             System.out.println(" ");
         }
@@ -85,12 +55,12 @@ public class Jogador{
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public int getPontuacao() {
-        return pontuacao;
+    
+    public char[][] getTabuleiro() {
+        return tabuleiro;
     }
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
+    public void setTabuleiro(char[][] tabuleiro) {
+        this.tabuleiro = tabuleiro;
     }
 }

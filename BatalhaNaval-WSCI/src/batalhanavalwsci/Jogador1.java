@@ -25,52 +25,9 @@ public class Jogador1 {
 
         Scanner entrada = new Scanner(System.in);
         Jogador jogador = new Jogador("Jogador1", 0, 3);
-        /*
-        do {
-            System.out.println("1 - Iniciar partida");
-            System.out.println("2 - Sair do Jogo");
-            int opcao;
-            opcao = entrada.nextInt();
-            switch (opcao) {
-                case 1:
-                    partida.conectarPartida(jogador);
-                    do {
-                        if (jogador.conectado && jogador.minhaVez == true) {
-                            System.out.println("Sua vez");
-                            System.out.println("Digite o numero da linha: ");
-                            int linha = entrada.nextInt();
-                            System.out.println("Digite o numero da coluna: ");
-                            int coluna = entrada.nextInt();
-                            jogador.atirar(jogador.oponente, linha, coluna);
-                            jogador.mostrarTabuleiro();
-                        }
-                        //} while ((jogador.getNumNavios() == 0) || (jogador.oponente.getNumNavios() == 0));
-                    } while (jogador.getNumNavios() == 0);
-                    break;
-                case 2:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Opcao inválida");
-                    break;
-            }
-
-        } while (true);
-         */
+        
         partida.conectarPartida(jogador);
+        partida.jogar(jogador, 0, 0);
 
-        if (jogador.conectado && jogador.minhaVez == true) {
-            System.out.println("Sua vez");
-            System.out.println("Digite o numero da linha: ");
-            int linha = entrada.nextInt();
-            System.out.println("Digite o numero da coluna: ");
-            int coluna = entrada.nextInt();
-            jogador.atirar(jogador.oponente, linha, coluna);
-            jogador.mostrarTabuleiro();
-            jogador.minhaVez = false;
-
-        } else {
-            System.out.println("Aguarde a sua vez!!!");
-        }
     }
 }
