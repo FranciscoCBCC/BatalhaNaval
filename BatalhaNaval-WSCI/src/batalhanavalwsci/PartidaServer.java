@@ -19,7 +19,7 @@ import javax.jws.soap.SOAPBinding.Style;
 @SOAPBinding(style = Style.RPC)
 public interface PartidaServer {
     @WebMethod
-    public void iniciarPartida(Jogador jogador1, Jogador jogador2);
+    public void iniciarPartida();
     
     /*@WebMethod
     public void mostrarTabuleiro();

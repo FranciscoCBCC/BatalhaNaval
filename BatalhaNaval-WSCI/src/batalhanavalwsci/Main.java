@@ -16,7 +16,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URL;
 
-public class Jogador1 {
+public class Main {
 
     public static void main(String[] args) throws Exception{
         URL url = new URL("http://127.0.0.1:9876/batalhanavalwsci?wsdl");
@@ -33,8 +33,8 @@ public class Jogador1 {
             opcao = entrada.nextInt();
             switch (opcao) {
                 case 1:
-                    Jogador jogador = new Jogador();
-                    partida.iniciarPartida(jogador, jogador);
+                    
+                    partida.iniciarPartida();
                     break;
                 case 2:
                     System.exit(0);
