@@ -1,4 +1,4 @@
-package batalhanaval.wsci;
+package batalhanavalwsci;
 
 import java.util.Scanner;
 
@@ -6,7 +6,12 @@ import java.util.Scanner;
  *
  * @author Francisco
  */
-public class Partida {
+
+import java.util.Date;
+import javax.jws.WebService;
+
+@WebService(endpointInterface = "batalhanavalwsci.PartidaServer")
+public class Partida implements PartidaServer{
 
     private static int numNavios = 3;
     private static int pontuacao = 0;
@@ -41,5 +46,5 @@ public class Partida {
 
         } while (terminou);
     }
-
+    
 }

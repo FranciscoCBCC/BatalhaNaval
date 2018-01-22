@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package batalhanaval.wsci;
+package batalhanavalwsci;
 
 /**
  *
  * @author Francisco
  */
-public class Jogador {
+
+
+public class Jogador{
 
     private String nome;
     private int pontuacao;
@@ -17,6 +19,10 @@ public class Jogador {
     private Tabuleiro tabuleiro;
     private char[][] tabuleiroOponente;
 
+    public Jogador(){
+        
+    }
+    
     public Jogador(String nome, int pontuacao, int numNavios) {
         this.nome = nome;
         this.pontuacao = pontuacao;
