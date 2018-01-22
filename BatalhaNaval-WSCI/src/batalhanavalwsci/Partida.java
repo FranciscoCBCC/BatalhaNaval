@@ -23,10 +23,10 @@ public class Partida implements PartidaServer{
 
     }
 
-    public void iniciarPartida(){
+    public void iniciarPartida(Jogador jogador1, Jogador jogador2){
 
-        Jogador jogador1 = new Jogador("Jogador1", pontuacao, numNavios);
-        Jogador jogador2 = new Jogador("Jogador2", pontuacao, numNavios);
+        //Jogador jogador1 = new Jogador("Jogador1", pontuacao, numNavios);
+        //Jogador jogador2 = new Jogador("Jogador2", pontuacao, numNavios);
         Scanner entrada = new Scanner(System.in);
         int linha, coluna;
         do {
