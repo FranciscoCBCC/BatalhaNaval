@@ -1,5 +1,6 @@
 package batalhanavalwsci;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,33 +19,32 @@ public class Partida implements PartidaServer{
     private boolean vez = false;
     private boolean terminou = true;
     private int entradaJogador2;
+    private ArrayList<Jogador> jogadores;
+    private static int numJogadores = 0;
+    private static int numMaxJogadores = 2;
 
     public Partida() {
-
+        jogadores = new ArrayList();
     }
 
-    public void iniciarPartida(){
-
-        Jogador jogador1 = new Jogador("Jogador1", pontuacao, numNavios);
-        Jogador jogador2 = new Jogador("Jogador2", pontuacao, numNavios);
-        Scanner entrada = new Scanner(System.in);
-        int linha, coluna;
-        do {
-            System.out.println("Vez do jodador 1: ");
-            System.out.println("Digite o numero da linha: ");
-            linha = entrada.nextInt();
-            System.out.println("Digite o numero da coluna: ");
-            coluna = entrada.nextInt();
-            jogador1.atirar(jogador2, linha, coluna);
-
-            System.out.println("Vez do jodador 2: ");
-            System.out.println("Digite o numero da linha: ");
-            linha = entrada.nextInt();
-            System.out.println("Digite o numero da coluna: ");
-            coluna = entrada.nextInt();
-            jogador2.atirar(jogador1, linha, coluna);
-
-        } while (terminou);
-    }
+    public void conectarPartida(Jogador jogador){
+        if(numJogadores==0){
+            jogadores.add(jogador);
+            jogador.conectado = true;
+            jogador.oponente = null;
+            numJogadores++;
+        }
+        else if (numJogadores == 1){
+            jogadores.add(jogador);
+            jogador.conectado = true;
+            numJogadores++;
+            jogador.oponente = (Jogador)jogadores.get(0);
+            jogadores.get(0).oponente = jogador;
+        }
+        else{
+            System.out.println("Numero Máximo de jogadores atingido.");
+        }
+        jogador.minhaVez=true;
+    }    
     
 }

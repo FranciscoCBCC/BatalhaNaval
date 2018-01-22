@@ -19,22 +19,5 @@ import javax.jws.soap.SOAPBinding.Style;
 @SOAPBinding(style = Style.RPC)
 public interface PartidaServer {
     @WebMethod
-    public void iniciarPartida();
-    
-    /*@WebMethod
-    public void mostrarTabuleiro();
-    
-    @WebMethod
-    public String getNome();
-    
-    @WebMethod
-    public void setNome(String nome);
-    
-    @WebMethod
-    public int getPontuacao();
-    
-    @WebMethod
-    public void setPontuacao(int pontuacao);
-*/
-            
+    public void conectarPartida(Jogador jogador);           
 }

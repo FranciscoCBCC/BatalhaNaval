@@ -18,6 +18,17 @@ public class Jogador{
     private int numNavios;
     private Tabuleiro tabuleiro;
     private char[][] tabuleiroOponente;
+    public boolean conectado = false;
+    public Jogador oponente;
+    public boolean minhaVez;
+
+    public int getNumNavios() {
+        return numNavios;
+    }
+
+    public void setNumNavios(int numNavios) {
+        this.numNavios = numNavios;
+    }
 
     public Jogador(){
         
@@ -28,6 +39,7 @@ public class Jogador{
         this.pontuacao = pontuacao;
         this.numNavios = numNavios;
         tabuleiro = new Tabuleiro(numNavios);
+        
     }
 
     public void atirar(Jogador jogadorOponente, int x, int y) {
