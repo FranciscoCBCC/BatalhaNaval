@@ -23,11 +23,11 @@ public class Jogador1 {
         Service ws = Service.create(url, qname);
         PartidaServer partida = ws.getPort(PartidaServer.class);
 
-        Scanner entrada = new Scanner(System.in);
+        //Scanner entrada = new Scanner(System.in);
         Jogador jogador = new Jogador("Jogador1", 0, 3);
         
         partida.conectarPartida(jogador);
-        partida.jogar(jogador, 0, 0);
+        partida.jogar(jogador, 1, 1);
 
     }
 }
